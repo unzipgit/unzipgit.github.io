@@ -1,5 +1,5 @@
 # unzipgit
-<img src="https://github.com/unzipgit/unzipgit.github.io/raw/main/images/logo.svg" width="1000" />
+<img src="https://github.com/unzipgit/unzipgit.github.io/raw/main/images/unzippriview.png" width="1000" />
 
 website: [unzipgit.github.io](https://unzipgit.github.io)
 --- 
