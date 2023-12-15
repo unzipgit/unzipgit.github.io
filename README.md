@@ -3,7 +3,7 @@
 
 website: [unzipgit.github.io](https://unzipgit.github.io)
 --- 
-- With unzipgit, you can extract a .zip archive to your GitHub repository. Unzipgit uses the jszip library and the GitHub API, which means that all actions take place on the client side (your browser).
+- With unzipgit, you can unzip a .zip archive to your GitHub repository. Unzipgit uses the jszip library and the GitHub API, which means that all actions take place on the client side (your browser).
 
 - If you want to unzip the archive to some folder, specify «yourrepo/folder» in the «repository» field.
 
