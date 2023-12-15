@@ -1,0 +1,601 @@
+      @font-face {
+        font-family: InterMed;
+        font-style: normal;
+        font-weight: 400;
+        src:
+          url("/font/inter-medium-webfont.woff2") format("woff2"),
+          url("/font/inter-medium-webfont.ttf") format("truetype");
+      }
+
+      body {
+        margin: 0;
+        background: #f1f5f8;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        justify-content: center;
+        top: 0;
+        min-height: 740px;
+        min-width: 550px;
+            letter-spacing: -0.25px;
+          overflow-x: hidden;
+      }
+
+      body * {
+        font-family: InterMed;
+      }
+
+      .none {
+        display: none;
+      }
+
+      .unone,
+      .inputlabel,
+      .tokendesc,
+      .footer *,
+      button,
+      .inputfile span, .atn,
+      .donat, .blo,
+      .desc {
+        user-select: none;
+      }
+
+      .wrap {
+        position: relative;
+        width: 500px;
+        margin: 0 auto;
+      }
+
+      .header {
+        padding: 0 35px 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header .logo {
+        width: 200px;
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      .header .desc {
+        font-size: 18px;
+        width: 170px;
+        opacity: 0;
+        text-align: right;
+        transform: translateX(30px);
+      }
+
+      /* form */
+
+      #unzip {
+        margin-bottom: 25px;
+      }
+
+      input:auto-fill { 
+  outline: 5px solid rgb(0 0 0 / .5);
+  box-shadow: 0 0 0px 40rem #ffff inset;
+}
+
+/*input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+    color: fieldtext !important;
+}
+*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000;
+  -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
+  border-radius: 30px;
+}
+
+      .litext {
+        width: 100%;
+        height: 100px;
+        background: #fff;
+        margin-bottom: 3px;
+        position: relative;
+        display: block;
+      }
+
+      .litext input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 22px 35px 0;
+        border: none;
+        font-size: 36px;
+        background: none;
+      }
+
+      .litext input:focus {
+        outline: none;
+      }
+
+      .litext .inputlabel {
+        position: absolute;
+        font-size: 30px;
+        color: #79889d;
+        left: 35px;
+        top: 32px;
+        cursor: text;
+        transition: 0.2s all;
+        
+      }
+
+      .litext .ulet, .ulet {
+        top:18px;
+        font-size: 20px;
+      }
+
+      #unzip > label:nth-child(1) {
+        border-radius: 30px 30px 0 0;
+      }
+
+      .tokendesc {
+        position: absolute;
+        width: 120px;
+        right: 35px;
+        top: 13px;
+        text-align: right;
+      }
+
+      .tokendesc {
+        color: #748cae;
+      }
+
+      .tokendesc a,
+      .tokendesc a:visited {
+        color: #0060ff;
+      }
+
+      .inputfile {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        height: 100px;
+        border-left: solid 3px #f1f5f8;
+        cursor: pointer;
+      }
+
+      .inputfile svg {
+        height: 35px;
+      }
+
+      .inputfile span {
+        font-size: 24px;
+        line-height: 22px;
+        width: min-content;
+        padding-left: 4px;
+        color: #79889d;
+      }
+
+      .ifdatainfo {
+        padding-left: 4px;
+            opacity: 0;
+    visibility: hidden;
+      }
+
+      .ifname {
+        margin: 0;
+    font-size: 18px;
+      }
+
+      .ifsize {
+            margin: 0;
+    font-size: 14px;
+      }
+
+      .inputfile input {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 1px;
+      }
+
+      .filegroup .litext {
+        flex: 1;
+      }
+
+      .filegroup {
+        display: flex;
+      }
+
+      button {
+        height: 100px;
+        width: 100%;
+        border: none;
+        border-radius: 0 0 30px 30px;
+        background: linear-gradient(0deg, #0060ff, #b2c8ff);
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0.1;
+        transition: 0.2s filter;
+      }
+
+      button:disabled {
+        filter: grayscale(1);
+      }
+
+      label .errlabel, .litext .errlabel {
+            color: #ff5959;
+      }
+
+      /* footer */
+
+      .footer * {
+        text-decoration: none;
+        color: #79889e;
+        margin: 0px 10px;
+        cursor: pointer;
+
+      }
+
+      .footer {
+        display: flex;
+        justify-content: center;
+            font-size: 16px;
+            transform: translateY(-30px);
+        opacity: 0;
+      }
+
+      /* attention  */
+
+      .atn {
+    position: fixed;
+    width: 500px;
+    min-height: 120px;
+    background: linear-gradient(00deg, #60676b, #a4a4a4);
+    border-radius: 30px;
+    bottom: 5%;
+    box-sizing: border-box;
+    padding: 30px 35px;
+    color: #ffffff;
+        opacity: 0;
+    visibility: hidden;
+      }
+
+      .atn .title {
+        font-size: 24px;
+    margin-bottom: 5px;
+      }
+
+      .atn .info {
+            opacity: 0.8;
+    font-size: 18px;
+    overflow-wrap: break-word;
+      }
+
+      .info a, .info a:visited {
+        color: #ffffff;
+      }
+
+
+
+      .closer {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    visibility: hidden;
+    width: 60px;
+      }
+
+      .closer circle {
+        fill: black;
+        opacity: 0;
+        transition: 0.25s opacity;
+      }
+
+      .closer:hover circle{
+        fill: black;
+        opacity: 0.1;
+      }
+
+.donat {
+      position: fixed;
+    background: #ffffff;
+    z-index: 3;
+    border-radius: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 500px;
+}
+
+.donat a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.blo {
+  display: flex;
+    align-items: center;
+    border-radius: 15px;
+    height: 80px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.donat {
+  color:#000000;
+  visibility: hidden;
+  font-size: 14px;
+}
+
+.donat .btc {
+  background: linear-gradient(0deg, #ffae00, #ffe465);
+}
+
+.donat .eth {
+      background: linear-gradient(45deg, #dedede, #f4f6ff);
+}
+
+.donat .pp {
+      background: linear-gradient(341deg, #e7f0fd, #accbee);
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.donat .pp svg {
+  padding: 0 15px 0 0;
+}
+
+.donat .coin {
+  font-size: 20px;
+}
+
+.donat .pp p{
+  font-size: 18px;
+}
+
+.donat svg {
+      height: 30px;
+    padding: 0 15px 0 20px;
+}
+
+.shadow {
+      position: fixed;
+    background: #1b1c1e;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    visibility: hidden;
+      top: 0;
+    left: 0;
+    right: 0;
+}
+
+.readme {
+      width: 500px;
+    position: fixed;
+    background: #ffffff;
+    z-index: 3;
+    border-radius: 30px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 18px;
+    visibility: hidden;
+}
+
+.readme a:visited,.readme a {
+  color: #0060ff;
+}
+
+/* anime */
+.gsbox {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+      @media (max-width: 549px){
+        body {
+          min-width: auto;
+    min-height: auto;
+    padding-top: 5vw;
+    height: auto;
+    overflow-x: hidden;
+    display: block;
+        }
+
+      .wrap {
+        width: 96.2vw;
+      }
+
+      .header {
+        padding: 0 6.7vw 8.7vw;
+      }
+
+      .header .logo {
+        width: 38.5vw;
+      }
+
+      .header .desc {
+        font-size: 3.5vw;
+        width: 32.7vw;
+      }
+
+      /* form */
+
+      #unzip {
+        margin-bottom: 4.8vw;
+      }
+
+      .litext {
+        height: 19.2vw;
+        margin-bottom: 0.6vw;
+      }
+
+      .litext input {
+        padding: 4.2vw 6.7vw 0;
+        font-size: 6.9vw;
+      }
+
+      .litext .inputlabel {
+        font-size: 5.8vw;
+        left: 6.7vw;
+        top: 6.2vw;
+      }
+
+      .litext .ulet, .ulet {
+        top: 4vw;
+        font-size: 4vw;
+      }
+
+      #unzip > label:nth-child(1) {
+        border-radius: 5.8vw 5.8vw 0 0;
+      }
+
+      .tokendesc {
+        width: 23.1vw;
+        right: 6.7vw;
+        top: 2.5vw;
+        font-size: 3.1vw;
+      }
+
+
+      .inputfile {
+        height: 19.2vw;
+        border-left: solid 0.6vw #f1f5f8;
+      }
+
+      .inputfile svg {
+        height: 6.7vw;
+      }
+
+      .inputfile span {
+        font-size: 4.6vw;
+        line-height: 4.2vw;
+        padding-left: 0.8vw;
+      }
+
+      .ifdatainfo {
+        padding-left: 0.8vw;
+      }
+
+      .ifname {
+    font-size: 3.5vw;
+      }
+
+      .ifsize {
+    font-size: 2.7vw;
+      }
+
+      button {
+        height: 19.2vw;
+        border-radius: 0 0 5.8vw 5.8vw;
+        font-size: 4.6vw;
+      }
+
+      .footer * {
+        margin: 0.3vw 1.9vw;
+      }
+
+      .footer {
+        margin-bottom: 19.2vw;
+        font-size: 4.5vw;
+      }
+
+      /* attention  */
+
+      .atn {
+    width: 96.2vw;
+    min-height: 23.1vw;
+    border-radius: 5.8vw;
+    padding: 5.8vw 6.7vw;
+    bottom: 1%;
+    margin: auto;
+    left: 0;
+    right: 0;
+      }
+
+      .atn .title {
+        font-size: 4.6vw;
+    margin-bottom: 1vw;
+      }
+
+      .atn .info {
+    font-size: 3.5vw;
+      }
+
+      .closer {
+    right: 2.9vw;
+    top: 2.9vw;
+    width: 15vw;
+      }
+
+
+     .donat {
+    border-radius: 5.8vw;
+    padding: 5.8vw;
+    width: 96.2vw;
+        top: 0;
+    left: 0;
+    right: 0;
+    margin: 10vw auto;
+        font-size: 3vw;
+}
+
+.donat a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.blo {
+  display: flex;
+    border-radius: 2.9vw;
+    height: 15.4vw;
+
+    margin-bottom: 2.9vw;
+}
+
+.donat .pp p {
+    font-size: 3.5vw;
+}
+
+
+.donat svg {
+      height: 5.8vw;
+    padding: 0 2.9vw 0 3.8vw;
+}
+
+.readme {
+      width: 96.2vw;
+
+    border-radius: 5.8vw;
+    padding: 5.8vw;
+    gap: 3.8vw;
+    font-size: 3.5vw;
+        top: 0;
+    left: 0;
+    right: 0;
+    margin: 10vw auto;
+}
+
+.donat .coin {
+  font-size: 3.8vw;
+}
+
+.donat {
+    font-size: 2.7vw;
+      }
+
+
+}
