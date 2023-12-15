@@ -1,5 +1,5 @@
 # unzipgit
-![unzipgit](https://github.com/unzipgit/unzipgit.github.io/raw/main/images/logo.png)
+![unzipgit](https://github.com/unzipgit/unzipgit.github.io/raw/main/images/logo.svg)
 
 website: [unzipgit.github.io](unzipgit.github.io)
 --- 
