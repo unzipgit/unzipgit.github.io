@@ -1,7 +1,7 @@
 # unzipgit
 <img src="https://github.com/unzipgit/unzipgit.github.io/raw/main/images/logo.svg" width="1000" />
 
-website: [unzipgit.github.io](unzipgit.github.io)
+website: [unzipgit.github.io](https://unzipgit.github.io)
 --- 
 - With unzipgit, you can extract a .zip archive to your GitHub repository. Unzipgit uses the jszip library and the GitHub API, which means that all actions take place on the client side (your browser).
 
