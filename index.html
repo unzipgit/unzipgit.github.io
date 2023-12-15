@@ -1,1 +1,99 @@
-<h1>unzipgit</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <title>UnzipGit</title>
+    <script src="script/gsap_3.12.2.min.js"></script>
+    <script src="script/jszip_3.1.5.min.js"></script>
+    <link rel="stylesheet" href="style/style.min.css">
+  </head>
+  <body>
+
+    <div class="wrap">
+      <div class="header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 60">
+            <path
+              d="m193.926 13.281-1.001 5.965h-6.476l-2.812 16.913c-.49 3.11.959 3.791 2.897 3.791.938 0 1.832-.213 2.301-.298l.341 6.028c-.938.277-2.535.703-4.708.767-5.858.149-9.777-2.875-8.712-9.01l3.003-18.191h-4.622l.98-5.965h4.622l1.3-7.839h7.711l-1.3 7.839h6.476Zm-22.493-4.686c-2.45 0-4.324-1.875-4.132-4.175.213-2.322 2.364-4.196 4.835-4.196 2.45 0 4.282 1.874 4.09 4.196-.171 2.3-2.343 4.175-4.793 4.175ZM168.706 46h-7.711l5.454-32.719h7.711L168.706 46Zm-28.548 12.951c-8.371 0-12.44-3.685-13.142-8.265l7.242-1.683c.639 1.939 2.194 4.112 6.902 4.112 4.366 0 7.988-1.981 8.754-6.795l.98-6.199h-.383c-1.534 2.407-4.665 5.41-10.267 5.41-7.562 0-12.611-5.325-10.821-15.997 1.768-10.757 8.691-16.679 16.252-16.679 5.773 0 7.648 3.472 8.436 5.837h.404l.895-5.411h7.605l-5.496 33.252c-1.363 8.392-8.563 12.418-17.361 12.418Zm6.476-39.769c-5.155 0-8.393 4.366-9.373 10.31-.979 6.028.938 9.99 6.05 9.99 4.899 0 8.414-3.749 9.436-9.99 1.002-6.199-1.171-10.31-6.113-10.31Zm-32.361 27.5c-6.305 0-8.435-3.92-9.543-5.709h-.426V58.27h-5.027V13.281h4.857v5.198h.596c1.108-1.704 3.068-5.624 9.458-5.624 8.265 0 13.974 6.561 13.974 16.871 0 10.395-5.709 16.956-13.889 16.956Zm-.681-29.311c-6.135 0-9.373 4.942-9.373 12.27 0 7.412 3.323 12.525 9.373 12.525 6.305 0 9.543-5.539 9.543-12.525 0-6.902-3.153-12.27-9.543-12.27ZM92.1 7.828c-1.959 0-3.578-1.534-3.578-3.408 0-1.875 1.619-3.408 3.578-3.408 1.96 0 3.579 1.533 3.579 3.408 0 1.874-1.619 3.408-3.579 3.408ZM60.635 42.166 79.21 18.308v-.34H61.232v-4.687h24.454v4.005L67.622 40.973v.341h18.66V46H60.635v-3.834Zm-8.801-16.615c0-5.134-2.833-8.18-7.498-8.18-4.814 0-8.35 3.238-8.35 8.947V46h-5.027V13.281h4.857v5.113h.426c1.533-3.323 4.601-5.539 9.543-5.539 6.624 0 11.076 4.005 11.076 12.355V46h-5.027V25.551ZM21.221 40.462h-.341c-1.534 3.323-4.772 5.964-9.713 5.964-6.135 0-10.566-4.005-10.566-12.355v-20.79h5.027V33.73c0 4.772 2.982 7.839 7.157 7.839 3.749 0 8.436-2.811 8.436-8.946V13.281h5.027V46h-5.027v-5.538ZM94.571 46h-5.027V13.281h5.027V46Z"
+              fill="#000000"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div class="desc">unzip archives in github repositories</div>
+      </div>
+      
+      <form id="unzip">
+        <label class="litext gsbox" for="gitname">
+          <span class="inputlabel">username</span>
+          <input type="text" name="gitname" id="gitname" autocomplete="new-password" />
+        </label>
+        <label class="litext gsbox" for="gitrepo">
+          <span class="inputlabel">repository</span>
+          <input type="text" name="gitrepo" id="gitrepo" autocomplete="new-password"/>
+        </label>
+        <label class="litext gsbox" for="gittoken">
+          <span class="inputlabel">token</span>
+          <p class="tokendesc"><a href="https://github.com/settings/tokens/new">get token</a> with «repo» scope</p>
+          <input type="text" name="gittoken" id="gittoken" autocomplete="new-password" />
+        </label>
+        <div class="filegroup gsbox">
+          <label class="litext" for="gitfilepath">
+            <input type="text" name="gitfilepath" id="gitfilepath" autocomplete="new-password" />
+            <span class="inputlabel">archive in repo</span>
+          </label>
+          <label for="gitfile" class="inputfile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path
+                fill="#79889d"
+                d="M32.4 4a11 11 0 0 0-7.8 3.3L4.4 27.4a1.5 1.5 0 1 0 2.2 2.2L26.7 9.4a8 8 0 0 1 11.4 0 8 8 0 0 1 0 11.4l-19 19a4.1 4.1 0 0 1-5.9 0 4.1 4.1 0 0 1 0-5.9l15.4-15.3a1.5 1.5 0 1 0-2.2-2.2L11.1 31.8a7.2 7.2 0 0 0 0 10.1 7.2 7.2 0 0 0 10.1 0l19-19A11 11 0 0 0 32.4 4z"
+              />
+            </svg>
+            <span class="inputlabel">select archive</span>
+            <div class="ifdatainfo">
+              <p class="ifname"></p>
+              <p class="ifsize"></p>
+            </div>
+            <input type="file" id="gitfile" name="gitfile" accept=".zip" />
+          </label>
+        </div>
+        <button class="gsbox">unzip in git</button>
+      </form>
+      <div class="footer">
+        <a href="https://github.com/unzipgit/unzipgit.github.io">github</a>
+        <div class="donatlink">donate</div>
+        <div class="readmelink">readme</div>
+      </div>
+    </div>
+    <div class="donat">
+        <a href="https://www.blockchain.com/explorer/addresses/btc/1PdjvdHSYHnH1fCnMPQ2vDZ2ZHBYe1cEew" class="blo btc">
+          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 274 360"><path fill="#ffffff" d="M217 167c19-9 30-26 28-54-4-38-37-51-78-54V6h-33v51l-25 1V6H77v53H12v34h23c13 0 17 8 19 14v145c-1 4-3 10-12 10H18l-6 39h65v53h32v-53l25 1v52h33v-53c54-3 91-17 96-68 4-40-15-59-46-66zM110 95c18 0 75-5 75 32s-57 32-75 32V95zm0 167v-70c21 0 90-6 90 35 0 40-69 35-90 35z"/></svg><div><div class="coin">bitcoin</div><div>1PdjvdHSYHnH1fCnMPQ2vDZ2ZHBYe1cEew</div></div>
+        </a>
+        <a href="https://www.blockchain.com/explorer/addresses/eth/0x59386960da930d0c649f2365c2313a7129a5b08f" class="blo eth">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="8 0 32 48"><path fill="#9fa8da" d="M11 24L25 2 39 24 25 32z" /><path fill="#7986cb" d="M25 2L39 24 25 32z" /><path fill="#9fa8da" d="M11 27L25 35 39 27 25 46z" /><path fill="#7986cb" d="M25 35L39 27 25 46zM11 24L25 18 39 24 25 32z" /><path fill="#5c6bc0" d="M25 18L39 24 25 32z" /></svg><div><div class="coin">ethereum</div><div>0x59386960da930d0c649f2365c2313a7129a5b08f</div></div>
+        </a>
+        <a href="https://ko-fi.com/unzipgit" class="blo pp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 60"><path d="M60 30v10H50v10H40v10H30V50H20V40H10V30H0V10h10V0h20v10h10V0h20v10h10v20H60Z" style="fill:#eb5c5b;"/><path d="M40 10V0h10v10H40ZM0 20V10h10v10H0ZM10 0h10v10H10V0Z" style="fill:#f18888"/></svg><p>donate on ko-fi</p>
+        </a>
+      </div>
+      <div class="readme">
+        <div>with unzipgit you can extract a .zip archive to your github repository. unzipgit uses the <a href="https://stuk.github.io/jszip/">jszip</a> library and the <a href="https://docs.github.com/ru/rest/repos/contents">github api</a>, which means that all actions take place on the client side (your browser). </div>
+        <div>if you want to unzip the archive to some folder, specify «yourrepo/folder» in the «repository» field.</div>
+        <div>you can unzip an archive that is already in the repository, or you can download the archive from your device.</div>
+        <div>if you are uznipping an archive that is already in the repository but stored in a specific folder, you can specify the full path «folder/archive.zip» in the «archive in repo» field.</div>
+      </div>
+      <div class="shadow"></div>
+    <div class="atn">
+        <div class="title">archive upload</div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="closer">
+<circle cx="50" cy="50" r="50"></circle>
+  <line x1="35" y1="35" x2="65" y2="65" stroke="white" stroke-width="5"></line>
+  <line x1="65" y1="35" x2="35" y2="65" stroke="white" stroke-width="5"></line>
+</svg>
+        <div class="info">You're not supposed to see this. Don't look in here.</div>
+      </div>
+<script src="script/core.min.js"></script>
+  </body>
+</html>
